@@ -13,7 +13,7 @@ node *iab(node *head) {
     scanf("%d", &Num);
     obj->data = Num;
     obj->next = head;
-    return obj;  // Update head to the new node
+    return obj;  
 }
 
 node *iae(node *head) {
@@ -22,25 +22,20 @@ node *iae(node *head) {
     printf("Enter the Element to Insert: ");
     scanf("%d", &Num);
     obj->data = Num;
-    obj->next = NULL;  // Set the next pointer to NULL for end insertion
-    
+    obj->next = NULL;  
     if (head == NULL) {
-        return obj;  // If the list is empty, the new node becomes the head
+        return obj;  
     }
-
     node *temp = head;
     while (temp->next != NULL) {
         temp = temp->next;
     }
-    temp->next = obj;  // Link the new node at the end
+    temp->next = obj;  
     return head;
 }
-
 node *iaap(node *head) {
     int Num,loc,j;
     node *obj=malloc(sizeof(node));
-    
-    
     node *temp, *i=head;
     if(loc==1){
         head=iab(head);
@@ -68,25 +63,21 @@ node *dab(node *head) {
         printf("\nNow Linked List is EMPTY...!!!\n");
         return head;
     }
-
     node *temp = head;
     head = head->next;
     printf("\nDeleted %d at Beginning\n", temp->data);
     free(temp);
     return head;
 }
-
 node *dae(node *head) {
     if (head == NULL) {
         printf("\nNow Linked List is EMPTY...!!!\n");
         return head;
     }
-
     node *temp = head;
     while (temp->next != NULL) {
         temp = temp->next;
     }
-
     printf("\nDeleted element is %d.\n", temp->data);
     free(temp);
     return head;
@@ -96,11 +87,9 @@ node *daap(node *head) {
     int locx, l;
     printf("Enter the location where you delete an element: ");
     scanf("%d", &locx);
-    
     if (locx == 1) {
-        return dab(head);  // Special case for deleting from the beginning
+        return dab(head);  
     }
-
     node *temp = head;
     for (l = 1; l < locx - 1 && temp != NULL; l++) {
         temp = temp->next;
@@ -180,7 +169,7 @@ void display(node *head) {
 
 int main() {
     int ch;
-    node *head = NULL;  // Initialize head as NULL
+    node *head = NULL; 
     while (1) {
         printf("\n*********Main List*********\n 1. Insert\n 2. Delete\n 3. Display\n 4. Exit\n\nEnter your choice: ");
         scanf("%d", &ch);
