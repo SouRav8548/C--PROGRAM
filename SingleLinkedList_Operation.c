@@ -89,7 +89,7 @@ node *daap(node *head){
 node *insert(node *head){
     int o;
     while(1){
-        printf("\n********Insert Operation.\n   1. Insert at Begining\n 2. Insert at end\n  3. Insert at any Position\n 4. Return..\n");
+        printf("\nInsert Operation.------>>>>>>>>\n1. Insert at Begining\n2. Insert at end\n3. Insert at any Position\n4. Return..\n");
         scanf("%d",&o);
         switch(o){
             case 1:
@@ -111,8 +111,12 @@ node *insert(node *head){
 
 node *delete(node *head){
     int o;
+    if(head==NULL){
+        printf("\n--------------Now!! Linked List is Empty [Underflow]--------------\n\n");
+        return head;
+    }
     while(1){
-        printf("\n********Delete Operation.\n   1. Delete at Begining\n 2. Delete at end\n  3. Delete at any Position\n 4. Return..\n");
+        printf("\nDelete Operation.------>>>>>>>>>>\n1. Delete at Begining\n2. Delete at end\n3. Delete at any Position\n4. Return..\n");
         scanf("%d",&o);
         switch(o){
             case 1:
@@ -149,7 +153,7 @@ void display(node *head){
 
 int main(){
     int ch;
-    node *head;
+    node *head=NULL;
     while(1){
         printf("\n*********Main List*********\n 1. Insert\n 2. Delete\n 3. Display\n 4. Exit\n\n Enter your choich: ");
         scanf("%d",&ch);
